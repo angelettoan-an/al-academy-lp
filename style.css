@@ -46,25 +46,35 @@ h1, h2, h3, h4, p { margin: 0; }
    2. デザイントークン
    ============================================================ */
 :root {
-  /* --- カラー：淡いピンク／ラベンダー／パステルブルー／ホワイト／ゴールド --- */
-  --c-pink:        #f9e7ec;
-  --c-pink-deep:   #f0cdd8;
-  --c-lavender:    #eae3f7;
-  --c-lavender-deep: #dccdf2;
-  --c-blue:        #e3edf9;
-  --c-blue-deep:   #d1e2f5;
+  /* --- カラー：淡いピンク／ラベンダー／パステルブルー／ホワイト／ゴールド ---
+     ブランド参考ビジュアル（Instagram投稿）に合わせて、
+     よりリッチなゴールドと紫がかったグラデーションを基準にしている */
+  --c-pink:        #f9e0ea;
+  --c-pink-deep:   #f0c7db;
+  --c-lavender:    #ecdff6;
+  --c-lavender-deep: #dcc7ef;
+  --c-blue:        #dfe9fa;
+  --c-blue-deep:   #cddbf5;
   --c-white:       #fffdfb;
   --c-ivory:       #fbf6f1;
-  --c-gold:        #c8a25c;
-  --c-gold-light:  #e8d3a3;
-  --c-gold-deep:   #a9803f;
 
-  --c-ink:         #4a3f4d;   /* 本文用ダークプラム */
-  --c-ink-soft:    #7c6f80;   /* 補助テキスト */
-  --c-line:        rgba(200, 162, 92, 0.35);
+  --c-gold:        #c9a227;   /* リッチゴールド（参考画像の縁取り・文字色） */
+  --c-gold-light:  #f3dda0;
+  --c-gold-deep:   #9c7a2e;
 
-  --grad-hero: linear-gradient(160deg, var(--c-pink) 0%, var(--c-lavender) 52%, var(--c-blue) 100%);
+  /* 見出しのグラデーション文字用（紫〜ブルー） */
+  --c-purple:      #6b5b9e;
+  --c-purple-soft: #9a7fbd;
+  --c-indigo:      #6f83c9;
+
+  --c-ink:         #423a56;   /* 本文用ダークプラム（やや青紫寄り） */
+  --c-ink-soft:    #7c6f8c;   /* 補助テキスト */
+  --c-line:        rgba(201, 162, 39, 0.35);
+
+  --grad-hero: linear-gradient(135deg, var(--c-pink) 0%, #f3e3f2 24%, #fdf9f8 48%, var(--c-lavender) 68%, var(--c-blue) 100%);
   --grad-soft: linear-gradient(180deg, var(--c-white) 0%, var(--c-ivory) 100%);
+  --grad-text: linear-gradient(100deg, var(--c-purple) 0%, var(--c-purple-soft) 30%, #c993bf 52%, var(--c-indigo) 76%, var(--c-purple) 100%);
+  --grad-gold: linear-gradient(120deg, var(--c-gold-light), var(--c-gold) 55%, var(--c-gold-deep));
 
   /* --- フォント：見出し=明朝／本文=ゴシック --- */
   --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", serif;
@@ -175,10 +185,10 @@ section { position: relative; overflow: hidden; }
 
 /* デコレーション（月・星・雲） */
 .decor { position: absolute; z-index: 1; pointer-events: none; user-select: none; }
-.decor--moon { width: 64px; opacity: 0.5; }
-.decor--star { width: 26px; opacity: 0.65; }
-.decor--star-sm { width: 14px; opacity: 0.55; }
-.decor--cloud { width: 180px; opacity: 0.5; filter: blur(0.3px); }
+.decor--moon { width: 64px; opacity: 0.6; }
+.decor--star { width: 26px; opacity: 0.75; }
+.decor--star-sm { width: 14px; opacity: 0.65; }
+.decor--cloud { width: 220px; opacity: 0.65; }
 .decor.spin-slow { animation: spin-slow 40s linear infinite; }
 .decor.float-slow { animation: float-slow 7s ease-in-out infinite; }
 .decor.float-slower { animation: float-slow 9.5s ease-in-out infinite; }
@@ -188,6 +198,34 @@ section { position: relative; overflow: hidden; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
+
+/* 見出しのグラデーション文字（参考ビジュアルの紫〜ブルーの文字グラデーション） */
+.text-gradient {
+  background: var(--grad-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--c-purple);
+}
+
+/* ブランドロゴバッジ（円形エンブレム） */
+.logo-badge { display: block; width: 40px; height: 40px; flex: none; }
+.logo-badge--lg { width: clamp(96px, 22vw, 132px); height: clamp(96px, 22vw, 132px); margin: 0 auto; }
+
+/* 額縁風ゴールドフレーム（証書のような上品な縁取りを、控えめな角の装飾で表現） */
+.ornate-frame { position: absolute; inset: 14px; z-index: 1; pointer-events: none; }
+.ornate-frame::before {
+  content: "";
+  position: absolute; inset: 0;
+  border: 1px solid var(--c-line);
+  border-radius: 2px;
+}
+.ornate-frame .corner { position: absolute; width: 42px; height: 42px; opacity: 0.85; }
+.ornate-frame .corner--tl { top: -1px; left: -1px; }
+.ornate-frame .corner--tr { top: -1px; right: -1px; transform: scaleX(-1); }
+.ornate-frame .corner--bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
+.ornate-frame .corner--br { bottom: -1px; right: -1px; transform: scale(-1, -1); }
 
 /* ボタン */
 .btn {
@@ -206,7 +244,7 @@ section { position: relative; overflow: hidden; }
   white-space: nowrap;
 }
 .btn--primary {
-  background: linear-gradient(120deg, var(--c-gold-light), var(--c-gold));
+  background: var(--grad-gold);
   color: #4a3418;
   box-shadow: 0 14px 30px -12px rgba(169, 128, 63, 0.55);
 }
@@ -276,10 +314,11 @@ section { position: relative; overflow: hidden; }
 }
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-serif);
 }
+.brand .brand-text { display: flex; flex-direction: column; }
 .brand-name {
   font-size: 20px;
   letter-spacing: 0.06em;
@@ -359,6 +398,7 @@ section { position: relative; overflow: hidden; }
   align-items: center;
 }
 .hero-badge { margin-bottom: 28px; }
+.hero-logo { margin-bottom: 30px; filter: drop-shadow(0 10px 24px rgba(156, 122, 46, 0.25)); }
 .hero-sub {
   font-family: var(--font-serif);
   font-size: 13px;
@@ -374,7 +414,7 @@ section { position: relative; overflow: hidden; }
   color: var(--c-ink);
   letter-spacing: 0.02em;
 }
-.hero-copy .accent { color: var(--c-gold-deep); }
+.hero-copy .accent { font-weight: 700; }
 .hero-brand {
   margin-top: 30px;
   font-family: var(--font-serif);
@@ -382,9 +422,26 @@ section { position: relative; overflow: hidden; }
   letter-spacing: 0.08em;
   color: var(--c-ink);
 }
-.hero-brand em { font-style: normal; color: var(--c-gold-deep); }
+.hero-brand em { font-style: normal; font-weight: 600; }
+.hero-divider {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero-divider::before,
+.hero-divider::after {
+  content: "";
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, transparent, var(--c-gold));
+  opacity: 0.7;
+}
+.hero-divider::after { background: linear-gradient(90deg, var(--c-gold), transparent); }
+.hero-divider img { width: 12px; height: 12px; }
 .hero-program {
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 13.5px;
   letter-spacing: 0.14em;
   color: var(--c-ink-soft);
@@ -946,6 +1003,7 @@ section { position: relative; overflow: hidden; }
 }
 .final-lead {
   font-family: var(--font-serif);
+  font-weight: 600;
   font-size: clamp(20px, 5vw, 28px);
   color: var(--c-ink);
 }
