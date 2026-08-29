@@ -1,0 +1,1049 @@
+/* ============================================================
+   al academy LP — style.css
+   目次:
+   1. Reset / Base
+   2. デザイントークン（色・フォント・余白）
+   3. 共通ユーティリティ（コンテナ・見出し・ボタン・区切り線）
+   4. ヘッダー / ナビゲーション
+   5. Section 1  ファーストビュー
+   6. Section 2  こんなお悩みありませんか？
+   7. Section 3  al academyとは
+   8. Section 4  講師陣の強み
+   9. Section 5  実践型トレーニング（サイクル図）
+   10. Section 6  電話鑑定実践
+   11. Section 7  チャット鑑定実践（2カラム比較）
+   12. Section 8  模擬オーディション
+   13. Section 9  プロフィール・ブランディング支援
+   14. Section 10 デビュー後の支援
+   15. Section 11 al academyの理念（循環図）
+   16. Section 12 こんな方におすすめ
+   17. Section 13 第1期5名限定募集
+   18. Section 14 料金
+   19. Section 15 申込みの流れ
+   20. Section 16 FAQ
+   21. Section 17 最終CTA
+   22. フッター
+   23. レスポンシブ（デスクトップ強化）
+   ============================================================ */
+
+/* ============================================================
+   1. Reset / Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font: inherit; cursor: pointer; }
+h1, h2, h3, h4, p { margin: 0; }
+
+/* ============================================================
+   2. デザイントークン
+   ============================================================ */
+:root {
+  /* --- カラー：淡いピンク／ラベンダー／パステルブルー／ホワイト／ゴールド --- */
+  --c-pink:        #f9e7ec;
+  --c-pink-deep:   #f0cdd8;
+  --c-lavender:    #eae3f7;
+  --c-lavender-deep: #dccdf2;
+  --c-blue:        #e3edf9;
+  --c-blue-deep:   #d1e2f5;
+  --c-white:       #fffdfb;
+  --c-ivory:       #fbf6f1;
+  --c-gold:        #c8a25c;
+  --c-gold-light:  #e8d3a3;
+  --c-gold-deep:   #a9803f;
+
+  --c-ink:         #4a3f4d;   /* 本文用ダークプラム */
+  --c-ink-soft:    #7c6f80;   /* 補助テキスト */
+  --c-line:        rgba(200, 162, 92, 0.35);
+
+  --grad-hero: linear-gradient(160deg, var(--c-pink) 0%, var(--c-lavender) 52%, var(--c-blue) 100%);
+  --grad-soft: linear-gradient(180deg, var(--c-white) 0%, var(--c-ivory) 100%);
+
+  /* --- フォント：見出し=明朝／本文=ゴシック --- */
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+
+  /* --- 余白（広めに設定） --- */
+  --space-section: clamp(64px, 11vw, 128px);
+  --space-block: clamp(32px, 6vw, 56px);
+  --container: 1080px;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 18px 48px -22px rgba(122, 96, 74, 0.28);
+}
+
+/* ============================================================
+   3. 共通ユーティリティ
+   ============================================================ */
+body {
+  font-family: var(--font-sans);
+  color: var(--c-ink);
+  background: var(--c-white);
+  line-height: 1.9;
+  font-size: 15.5px;
+  letter-spacing: 0.02em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { position: relative; overflow: hidden; }
+
+.section-inner {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-section) 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  letter-spacing: 0.28em;
+  color: var(--c-gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--c-gold);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(24px, 5vw, 34px);
+  line-height: 1.65;
+  color: var(--c-ink);
+  letter-spacing: 0.03em;
+}
+.section-title strong {
+  color: var(--c-gold-deep);
+  font-weight: 600;
+}
+
+.section-lead {
+  margin-top: 20px;
+  font-size: 15.5px;
+  color: var(--c-ink-soft);
+  line-height: 2;
+  max-width: 640px;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto var(--space-block);
+}
+.section-head .section-lead { margin-left: auto; margin-right: auto; }
+
+/* ゴールドの区切り線（控えめに使用） */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: var(--space-block) 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: clamp(40px, 12vw, 96px);
+  background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+  opacity: 0.7;
+}
+.divider img { width: 14px; height: 14px; opacity: 0.85; }
+
+/* デコレーション（月・星・雲） */
+.decor { position: absolute; z-index: 1; pointer-events: none; user-select: none; }
+.decor--moon { width: 64px; opacity: 0.5; }
+.decor--star { width: 26px; opacity: 0.65; }
+.decor--star-sm { width: 14px; opacity: 0.55; }
+.decor--cloud { width: 180px; opacity: 0.5; filter: blur(0.3px); }
+.decor.spin-slow { animation: spin-slow 40s linear infinite; }
+.decor.float-slow { animation: float-slow 7s ease-in-out infinite; }
+.decor.float-slower { animation: float-slow 9.5s ease-in-out infinite; }
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ボタン */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 34px;
+  border-radius: 999px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: linear-gradient(120deg, var(--c-gold-light), var(--c-gold));
+  color: #4a3418;
+  box-shadow: 0 14px 30px -12px rgba(169, 128, 63, 0.55);
+}
+.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -14px rgba(169, 128, 63, 0.65); }
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: var(--c-gold);
+  color: var(--c-gold-deep);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.85); }
+.btn--block { width: 100%; }
+.btn small { display: block; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.08em; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--c-line);
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  color: var(--c-gold-deep);
+  font-family: var(--font-serif);
+}
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-gold); }
+
+/* カード共通 */
+.card {
+  background: var(--c-white);
+  border: 1px solid rgba(200, 162, 92, 0.18);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+/* スマホのみ改行させたい箇所に使用 */
+.only-sp { display: inline; }
+@media (min-width: 560px) { .only-sp { display: none; } }
+
+/* scroll-reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   4. ヘッダー / ナビゲーション
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  background: rgba(255, 253, 251, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 162, 92, 0.16);
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+.site-header.is-scrolled {
+  padding: 10px 0;
+  box-shadow: 0 8px 24px -18px rgba(122, 96, 74, 0.4);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-serif);
+}
+.brand-name {
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: var(--c-ink);
+  font-weight: 600;
+}
+.brand-name em {
+  font-style: normal;
+  color: var(--c-gold-deep);
+}
+.brand-sub {
+  display: none;
+  font-size: 10.5px;
+  color: var(--c-ink-soft);
+  letter-spacing: 0.08em;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--c-line);
+  border-radius: 10px;
+}
+.nav-toggle span {
+  width: 18px;
+  height: 1.5px;
+  background: var(--c-gold-deep);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.site-nav {
+  position: fixed;
+  top: 0; right: 0;
+  height: 100vh;
+  width: min(78vw, 340px);
+  background: var(--grad-hero);
+  padding: 100px 32px 40px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 99;
+  box-shadow: -18px 0 40px -20px rgba(122, 96, 74, 0.35);
+}
+.site-nav.is-open { transform: translateX(0); }
+.site-nav ul { display: flex; flex-direction: column; gap: 22px; }
+.site-nav a {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--c-ink);
+  letter-spacing: 0.04em;
+}
+.site-nav .btn { margin-top: 28px; }
+
+.header-cta { display: none; }
+
+/* ============================================================
+   5. Section 1  ファーストビュー
+   ============================================================ */
+.hero {
+  background: var(--grad-hero);
+  padding-top: 96px;
+}
+.hero .section-inner {
+  padding-top: clamp(56px, 12vw, 96px);
+  padding-bottom: clamp(64px, 12vw, 100px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-badge { margin-bottom: 28px; }
+.hero-sub {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--c-gold-deep);
+  margin-bottom: 14px;
+}
+.hero-copy {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(28px, 7.2vw, 46px);
+  line-height: 1.6;
+  color: var(--c-ink);
+  letter-spacing: 0.02em;
+}
+.hero-copy .accent { color: var(--c-gold-deep); }
+.hero-brand {
+  margin-top: 30px;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 8vw, 44px);
+  letter-spacing: 0.08em;
+  color: var(--c-ink);
+}
+.hero-brand em { font-style: normal; color: var(--c-gold-deep); }
+.hero-program {
+  margin-top: 10px;
+  font-size: 13.5px;
+  letter-spacing: 0.14em;
+  color: var(--c-ink-soft);
+}
+.hero-sub-copy {
+  margin-top: 26px;
+  font-size: 14.5px;
+  color: var(--c-ink-soft);
+  line-height: 2;
+  max-width: 420px;
+}
+.hero-actions { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.hero-note { font-size: 11.5px; color: var(--c-ink-soft); letter-spacing: 0.06em; }
+.hero-scroll {
+  margin-top: 56px;
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  position: relative;
+}
+
+/* ============================================================
+   6. Section 2  こんなお悩みありませんか？
+   ============================================================ */
+.section-worries { background: var(--grad-soft); }
+.worries-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.worry-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 22px;
+  background: var(--c-white);
+  border: 1px solid rgba(200, 162, 92, 0.16);
+  border-radius: var(--radius-sm);
+}
+.worry-item .mark {
+  flex: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--grad-hero);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  color: var(--c-gold-deep);
+  font-size: 13px;
+}
+.worry-item p { font-size: 14.5px; color: var(--c-ink); line-height: 1.8; }
+
+/* ============================================================
+   7. Section 3  al academyとは
+   ============================================================ */
+.section-about { background: var(--c-white); }
+.about-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(19px, 4vw, 25px);
+  line-height: 1.9;
+  text-align: center;
+  color: var(--c-ink);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.about-pillars {
+  margin-top: var(--space-block);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.pillar {
+  padding: 28px 24px;
+  text-align: center;
+  border-radius: var(--radius-md);
+  background: var(--grad-soft);
+  border: 1px solid rgba(200, 162, 92, 0.14);
+}
+.pillar .num {
+  font-family: var(--font-serif);
+  color: var(--c-gold);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+.pillar h3 {
+  margin-top: 10px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--c-ink);
+}
+.pillar p { margin-top: 10px; font-size: 13.5px; color: var(--c-ink-soft); }
+
+/* ============================================================
+   8. Section 4  講師陣の強み
+   ============================================================ */
+.section-instructors { background: var(--grad-hero); }
+.instructor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.instructor-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(4px);
+}
+.instructor-item h4 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--c-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.instructor-item h4::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--c-gold-deep);
+}
+.instructor-item p { margin-top: 8px; font-size: 13px; color: var(--c-ink-soft); }
+.instructor-note {
+  margin-top: var(--space-block);
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  color: var(--c-ink);
+}
+
+/* ============================================================
+   9. Section 5  実践型トレーニング（サイクル図）
+   ============================================================ */
+.section-training { background: var(--c-white); }
+.cycle-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.cycle-step {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+}
+.cycle-step .circle {
+  flex: none;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: var(--grad-hero);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  color: var(--c-gold-deep);
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid var(--c-line);
+}
+.cycle-step .txt h4 { font-family: var(--font-serif); font-size: 15.5px; color: var(--c-ink); }
+.cycle-step .txt p { margin-top: 4px; font-size: 13px; color: var(--c-ink-soft); }
+.cycle-arrow {
+  width: 1px;
+  height: 26px;
+  margin-left: 28px;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  position: relative;
+}
+.cycle-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--c-gold);
+}
+.cycle-loop-note {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--c-gold-deep);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   10. Section 6  電話鑑定実践
+   ============================================================ */
+.section-phone { background: var(--grad-soft); }
+.tag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.tag-item {
+  padding: 22px 16px;
+  text-align: center;
+  background: var(--c-white);
+  border: 1px solid rgba(200, 162, 92, 0.16);
+  border-radius: var(--radius-sm);
+}
+.tag-item .ico { font-family: var(--font-serif); color: var(--c-gold); font-size: 12px; letter-spacing: 0.1em; }
+.tag-item h4 { margin-top: 8px; font-family: var(--font-serif); font-size: 14.5px; color: var(--c-ink); }
+
+/* ============================================================
+   11. Section 7  チャット鑑定実践（2カラム比較）
+   ============================================================ */
+.section-chat { background: var(--c-white); }
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.compare-card {
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(200, 162, 92, 0.18);
+}
+.compare-card.type-a { background: linear-gradient(165deg, var(--c-pink), var(--c-white) 70%); }
+.compare-card.type-b { background: linear-gradient(165deg, var(--c-blue), var(--c-white) 70%); }
+.compare-card h3 { font-family: var(--font-serif); font-size: 17px; color: var(--c-ink); }
+.compare-card .desc { margin-top: 6px; font-size: 12.5px; color: var(--c-ink-soft); }
+.compare-card ul { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+.compare-card li {
+  font-size: 13.5px;
+  color: var(--c-ink);
+  padding-left: 18px;
+  position: relative;
+}
+.compare-card li::before {
+  content: "";
+  position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+
+/* ============================================================
+   12. Section 8  模擬オーディション
+   ============================================================ */
+.section-audition { background: var(--grad-hero); }
+.audition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.audition-item {
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--c-ink);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.audition-callout {
+  margin-top: var(--space-block);
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+.audition-callout p:first-child {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--c-ink);
+}
+.audition-callout p:last-child { margin-top: 10px; font-size: 13.5px; color: var(--c-ink-soft); }
+
+/* ============================================================
+   13. Section 9  プロフィール・ブランディング支援
+   ============================================================ */
+.section-branding { background: var(--c-white); }
+.branding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.branding-item {
+  padding: 20px 12px;
+  text-align: center;
+  background: var(--grad-soft);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(200, 162, 92, 0.14);
+  font-size: 13.5px;
+  color: var(--c-ink);
+}
+
+/* ============================================================
+   14. Section 10 デビュー後の支援
+   ============================================================ */
+.section-after { background: var(--grad-soft); }
+.after-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.after-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--c-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(200, 162, 92, 0.16);
+}
+.after-item .num {
+  font-family: var(--font-serif);
+  color: var(--c-gold);
+  font-size: 20px;
+}
+.after-item p { font-size: 14px; color: var(--c-ink); }
+
+/* ============================================================
+   15. Section 11 al academyの理念（循環図）
+   ============================================================ */
+.section-philosophy { background: var(--c-white); text-align: center; }
+.philosophy-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(19px, 4.4vw, 26px);
+  line-height: 2;
+  color: var(--c-ink);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.philosophy-statement .accent { color: var(--c-gold-deep); }
+.loop-diagram {
+  margin: var(--space-block) auto 0;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loop-node {
+  width: 100%;
+  padding: 16px 10px;
+  border-radius: 999px;
+  background: var(--grad-hero);
+  border: 1px solid var(--c-line);
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  color: var(--c-ink);
+}
+.loop-arrow-down {
+  width: 1px; height: 24px;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  position: relative;
+}
+.loop-arrow-down::after {
+  content: "";
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  border: 4px solid transparent; border-top-color: var(--c-gold);
+}
+.loop-cycle-note {
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--c-gold-deep);
+}
+
+/* ============================================================
+   16. Section 12 こんな方におすすめ
+   ============================================================ */
+.section-recommend { background: var(--grad-hero); }
+.check-list {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.check-item .check {
+  flex: none;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--c-white);
+  border: 1px solid var(--c-gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-gold-deep);
+  font-size: 12px;
+}
+.check-item p { font-size: 14px; color: var(--c-ink); }
+
+/* ============================================================
+   17. Section 13 第1期5名限定募集
+   ============================================================ */
+.section-recruit { background: var(--c-white); text-align: center; }
+.recruit-number {
+  font-family: var(--font-serif);
+  font-size: clamp(46px, 12vw, 72px);
+  color: var(--c-gold-deep);
+  line-height: 1;
+}
+.recruit-number span { font-size: 0.32em; letter-spacing: 0.1em; margin-left: 6px; color: var(--c-ink); }
+.recruit-reason {
+  margin: var(--space-block) auto 0;
+  max-width: 560px;
+  padding: 30px 28px;
+  background: var(--grad-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(200, 162, 92, 0.16);
+}
+.recruit-reason .label {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--c-gold-deep);
+  letter-spacing: 0.1em;
+}
+.recruit-reason p.reason-text {
+  margin-top: 14px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 2;
+  color: var(--c-ink);
+}
+
+/* ============================================================
+   18. Section 14 料金
+   ============================================================ */
+.section-price { background: var(--grad-soft); }
+.price-card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  text-align: center;
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-gold);
+  box-shadow: var(--shadow-soft);
+}
+.price-card .plan-name {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--c-gold-deep);
+}
+.price-card .plan-price {
+  margin-top: 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 9vw, 48px);
+  color: var(--c-ink);
+}
+.price-card .plan-price sub { font-size: 14px; color: var(--c-ink-soft); }
+.price-card .plan-note { margin-top: 6px; font-size: 11.5px; color: var(--c-ink-soft); }
+.price-card ul { margin-top: 26px; text-align: left; display: flex; flex-direction: column; gap: 12px; }
+.price-card li {
+  font-size: 13.5px;
+  color: var(--c-ink);
+  padding-left: 20px;
+  position: relative;
+}
+.price-card li::before {
+  content: "";
+  position: absolute; left: 0; top: 7px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+.price-card .btn { margin-top: 28px; width: 100%; }
+.price-disclaimer { margin-top: 18px; text-align: center; font-size: 11.5px; color: var(--c-ink-soft); }
+
+/* ============================================================
+   19. Section 15 申込みの流れ
+   ============================================================ */
+.section-flow { background: var(--c-white); }
+.flow-list {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.flow-step { display: flex; gap: 18px; }
+.flow-step .step-num {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--c-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  color: var(--c-gold-deep);
+  font-size: 14px;
+}
+.flow-step .step-body { padding-bottom: 30px; }
+.flow-step:last-child .step-body { padding-bottom: 0; }
+.flow-step .step-body h4 { font-family: var(--font-serif); font-size: 15.5px; color: var(--c-ink); padding-top: 8px; }
+.flow-step .step-body p { margin-top: 6px; font-size: 13px; color: var(--c-ink-soft); }
+.flow-step .step-left {
+  flex: none;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flow-step .connector {
+  flex: 1;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+.flow-step .connector .line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+}
+
+/* ============================================================
+   20. Section 16 FAQ
+   ============================================================ */
+.section-faq { background: var(--grad-soft); }
+.faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--c-white);
+  border: 1px solid rgba(200, 162, 92, 0.18);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  color: var(--c-ink);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .q-mark { color: var(--c-gold-deep); margin-right: 10px; }
+.faq-item summary .plus {
+  flex: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--c-gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-gold-deep);
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.faq-item[open] summary .plus { transform: rotate(135deg); }
+.faq-answer { padding: 0 22px 22px 22px; font-size: 13.5px; color: var(--c-ink-soft); line-height: 1.9; }
+
+/* ============================================================
+   21. Section 17 最終CTA
+   ============================================================ */
+.section-final {
+  background: var(--grad-hero);
+  text-align: center;
+}
+.final-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5vw, 28px);
+  color: var(--c-ink);
+}
+.final-chain {
+  margin: 28px auto 0;
+  max-width: 340px;
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 2.3;
+  color: var(--c-ink);
+}
+.final-chain .accent { color: var(--c-gold-deep); }
+.final-badge { margin: 34px 0 20px; }
+.final-actions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+/* ============================================================
+   22. フッター
+   ============================================================ */
+.site-footer {
+  background: var(--c-ink);
+  color: rgba(255, 253, 251, 0.75);
+  text-align: center;
+  padding: 48px 24px 32px;
+}
+.site-footer .brand-name { color: #fff; }
+.site-footer .brand-name em { color: var(--c-gold-light); }
+.footer-tagline { margin-top: 10px; font-size: 12.5px; letter-spacing: 0.06em; opacity: 0.85; }
+.footer-links {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.footer-links a { opacity: 0.8; }
+.footer-links a:hover { opacity: 1; }
+.footer-copy { margin-top: 26px; font-size: 11px; opacity: 0.55; }
+
+/* ============================================================
+   23. レスポンシブ（デスクトップ強化）
+   ============================================================ */
+@media (min-width: 560px) {
+  .worries-grid,
+  .about-pillars,
+  .instructor-grid,
+  .after-grid,
+  .compare-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .audition-grid { grid-template-columns: repeat(3, 1fr); }
+  .branding-grid { grid-template-columns: repeat(3, 1fr); }
+  .tag-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 768px) {
+  body { font-size: 16px; }
+  .brand-sub { display: block; }
+  .header-cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+
+  .site-nav {
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .site-nav ul { flex-direction: row; gap: 30px; }
+  .site-nav a { font-size: 13.5px; color: var(--c-ink); }
+  .site-nav .btn { display: none; }
+
+  .hero-actions { flex-direction: row; }
+
+  .worries-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-pillars { grid-template-columns: repeat(3, 1fr); }
+  .instructor-grid { grid-template-columns: repeat(3, 1fr); }
+  .compare-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  .after-grid { grid-template-columns: repeat(2, 1fr); }
+  .audition-grid { grid-template-columns: repeat(3, 1fr); }
+  .branding-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .final-actions { flex-direction: row; }
+}
+
+@media (min-width: 1024px) {
+  .about-quote { font-size: 27px; }
+  .philosophy-statement { font-size: 28px; }
+  .instructor-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .audition-grid { grid-template-columns: repeat(5, 1fr); }
+  .cycle-flow { max-width: 640px; }
+  .loop-diagram { max-width: 360px; }
+}
+
+/* prefers-reduced-motion 対応 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .decor.spin-slow, .decor.float-slow, .decor.float-slower { animation: none; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
