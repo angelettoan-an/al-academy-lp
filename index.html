@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>al academy｜実践型プロ占い師育成プログラム</title>
+<meta name="description" content="「占える」から「選ばれ続けるプロ占い師」へ。al academyは、占術の知識を仕事にする力に変える実践型プロ占い師育成プログラムです。第1期5名限定、無料相談受付中。">
+
+<!-- Google Fonts：見出し=Noto Serif JP（明朝）／本文=Noto Sans JP（ゴシック） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER / NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="#hero" class="brand">
+      <img src="assets/icons/logo-badge.svg" class="logo-badge" alt="">
+      <span class="brand-text">
+        <span class="brand-name">al <em>academy</em></span>
+        <span class="brand-sub">実践型プロ占い師育成プログラム</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="siteNav">
+      <ul>
+        <li><a href="#about" class="nav-link">al academyとは</a></li>
+        <li><a href="#training" class="nav-link">プログラム内容</a></li>
+        <li><a href="#price" class="nav-link">料金</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#recruit" class="btn btn--primary btn--block nav-link">無料相談に申し込む</a></li>
+      </ul>
+    </nav>
+
+    <a href="#recruit" class="btn btn--primary header-cta">無料相談に申し込む</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       SECTION 1：ファーストビュー
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="ornate-frame" aria-hidden="true">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--tl" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--tr" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--bl" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--br" alt="">
+    </div>
+    <img src="assets/icons/moon.svg" class="decor decor--moon float-slow" style="top:14%; left:6%;" alt="">
+    <img src="assets/icons/cloud.svg" class="decor decor--cloud" style="bottom:2%; right:-6%;" alt="">
+    <img src="assets/icons/cloud.svg" class="decor decor--cloud" style="bottom:-2%; left:-10%; width:170px;" alt="">
+    <img src="assets/icons/star.svg" class="decor decor--star spin-slow" style="top:22%; right:10%;" alt="">
+    <img src="assets/icons/star-small.svg" class="decor decor--star-sm float-slower" style="bottom:32%; left:12%;" alt="">
+    <img src="assets/icons/star-small.svg" class="decor decor--star-sm float-slow" style="top:40%; right:20%; width:10px;" alt="">
+
+    <div class="container">
+      <div class="section-inner">
+        <div class="hero-badge">
+          <span class="badge"><span class="dot"></span>第1期 5名限定 募集</span>
+        </div>
+
+        <img src="assets/icons/logo-badge.svg" class="logo-badge--lg reveal" alt="al academy">
+
+        <p class="hero-copy reveal">
+          「占える」から、<br>
+          <span class="accent text-gradient">「選ばれ続けるプロ占い師」</span>へ。
+        </p>
+
+        <p class="hero-brand reveal">al <em class="text-gradient">academy</em></p>
+        <span class="hero-divider" aria-hidden="true"><img src="assets/icons/star.svg" alt=""></span>
+        <p class="hero-program reveal">実践型プロ占い師育成プログラム</p>
+
+        <p class="hero-sub-copy reveal">
+          占術を学ぶ場所は、たくさんある。<br>
+          al academyが大切にするのは、その先まで。
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#recruit" class="btn btn--primary">
+            無料相談に申し込む
+            <small>第1期 5名限定</small>
+          </a>
+          <a href="#about" class="btn btn--ghost">al academyについて詳しく見る</a>
+        </div>
+
+        <p class="hero-note">Instagramをご覧いただきありがとうございます。まずは無料相談から、お気軽にどうぞ。</p>
+
+        <span class="hero-scroll" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2：こんなお悩みありませんか？
+       ============================================================ -->
+  <section class="section-worries" id="worries">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Worries</span>
+          <h2 class="section-title">こんなお悩み、<br class="only-sp">ありませんか？</h2>
+          <p class="section-lead">占術を学んだあと、多くの方が同じ壁にぶつかります。<br>それは、あなただけの悩みではありません。</p>
+        </div>
+
+        <ul class="worries-grid">
+          <li class="worry-item reveal"><span class="mark">01</span><p>占術は学んだが、それを仕事にする方法が分からない</p></li>
+          <li class="worry-item reveal"><span class="mark">02</span><p>プロ占い師オーディションを受けるのが不安</p></li>
+          <li class="worry-item reveal"><span class="mark">03</span><p>電話鑑定で何を話せばいいのか分からない</p></li>
+          <li class="worry-item reveal"><span class="mark">04</span><p>チャット鑑定の文章量や伝え方に自信がない</p></li>
+          <li class="worry-item reveal"><span class="mark">05</span><p>デビューはできたけれど、リピーターが増えない</p></li>
+          <li class="worry-item reveal"><span class="mark">06</span><p>思うように売上が伸びず、続けていく自信を失いかけている</p></li>
+          <li class="worry-item reveal"><span class="mark">07</span><p>プロフィールをどう書けばいいのか、いつも悩んでしまう</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3：al academyとは
+       ============================================================ -->
+  <section class="section-about" id="about">
+    <img src="assets/icons/star.svg" class="decor decor--star-sm float-slow" style="top:8%; right:8%;" alt="">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">About al academy</span>
+          <h2 class="section-title">al academyとは</h2>
+        </div>
+
+        <p class="about-quote reveal">
+          「学ぶだけで終わらない、<br>プロになるための占い師スクール」
+        </p>
+
+        <p class="section-lead reveal" style="max-width:640px; margin-left:auto; margin-right:auto; text-align:center;">
+          al academyは、占術＋実践力＋プロとして活動する力の3つを、体系的に身につけていく実践型プログラムです。
+          知識を「使える力」に変え、選ばれ続けるプロとして活動していくための土台をつくります。
+        </p>
+
+        <div class="about-pillars">
+          <div class="pillar reveal">
+            <span class="num">01 — Fortune-telling</span>
+            <h3>占術を、活きた力に</h3>
+            <p>学んだ占術の知識を、相談者にきちんと伝わる「実践の技術」へと引き上げていきます。</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="num">02 — Practice</span>
+            <h3>プロとしての実践力</h3>
+            <p>電話・チャット、それぞれの現場で求められる話し方、聞き方、時間の使い方を磨きます。</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="num">03 — Career</span>
+            <h3>選ばれ続ける仕組み</h3>
+            <p>プロフィール、リピート戦略、売上改善など、活動を続けるための土台をつくります。</p>
+          </div>
+        </div>
+
+        <p class="section-lead reveal" style="max-width:640px; margin:40px auto 0; text-align:center; font-size:13px;">
+          ※本プログラムは、実践力とプロとしての活動力を磨くことに特化した内容です。今後al academyでは、占術を基礎から学べるコースの展開も予定しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4：講師陣の強み
+       ============================================================ -->
+  <section class="section-instructors" id="instructors">
+    <img src="assets/icons/moon.svg" class="decor decor--moon float-slow" style="bottom:10%; left:4%;" alt="">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Instructors</span>
+          <h2 class="section-title">講師陣の強み</h2>
+          <p class="section-lead">al academyの講師は、「教える側」であると同時に、<br>プロ占い師を「選び、育ててきた」経験を持っています。</p>
+        </div>
+
+        <ul class="instructor-grid">
+          <li class="instructor-item reveal"><h4>プロ占い師の採用選考</h4><p>実際に占い師を採用する立場としての選考経験。</p></li>
+          <li class="instructor-item reveal"><h4>オーディション審査</h4><p>合否を分けるポイントを、審査側の視点から把握。</p></li>
+          <li class="instructor-item reveal"><h4>デビュー前研修</h4><p>デビュー前に必要な準備を、実践形式で指導。</p></li>
+          <li class="instructor-item reveal"><h4>電話鑑定指導</h4><p>声・間・時間配分など、電話鑑定特有の技術を指導。</p></li>
+          <li class="instructor-item reveal"><h4>チャット鑑定指導</h4><p>文字課金・時間課金、それぞれに合った伝え方を指導。</p></li>
+          <li class="instructor-item reveal"><h4>プロフィール改善</h4><p>選ばれるプロフィールへの改善サポート。</p></li>
+          <li class="instructor-item reveal"><h4>リピーター獲得支援</h4><p>信頼を積み重ね、リピートにつなげる関わり方を指導。</p></li>
+          <li class="instructor-item reveal"><h4>売上改善支援</h4><p>数値をもとにした、活動改善のアドバイス。</p></li>
+          <li class="instructor-item reveal"><h4>グレードアップ支援</h4><p>ランクアップに必要な準備を伴走してサポート。</p></li>
+        </ul>
+
+        <p class="instructor-note reveal">「選ぶ側」「育てる側」の経験を持つ講師陣が、そばで伴走します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5：実践型トレーニング
+       ============================================================ -->
+  <section class="section-training" id="training">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Training Cycle</span>
+          <h2 class="section-title">実践型トレーニング</h2>
+          <p class="section-lead">知識を仕事にする力へと変えていくために、<br>al academyは「実践のサイクル」を大切にしています。</p>
+        </div>
+
+        <div class="cycle-flow">
+          <div class="cycle-step reveal">
+            <span class="circle">実践<br>01</span>
+            <div class="txt"><h4>実践</h4><p>実際の鑑定を想定したトレーニングを行います。</p></div>
+          </div>
+          <span class="cycle-arrow"></span>
+          <div class="cycle-step reveal">
+            <span class="circle">評価<br>02</span>
+            <div class="txt"><h4>評価</h4><p>講師が第三者の視点で、鑑定内容を確認します。</p></div>
+          </div>
+          <span class="cycle-arrow"></span>
+          <div class="cycle-step reveal">
+            <span class="circle">FB<br>03</span>
+            <div class="txt"><h4>フィードバック</h4><p>良い点・改善点を、具体的に言語化して共有します。</p></div>
+          </div>
+          <span class="cycle-arrow"></span>
+          <div class="cycle-step reveal">
+            <span class="circle">改善<br>04</span>
+            <div class="txt"><h4>改善</h4><p>フィードバックをもとに、自分の課題と向き合います。</p></div>
+          </div>
+          <span class="cycle-arrow"></span>
+          <div class="cycle-step reveal">
+            <span class="circle">再実践<br>05</span>
+            <div class="txt"><h4>再実践</h4><p>改善した内容を、もう一度実践で試していきます。</p></div>
+          </div>
+        </div>
+        <p class="cycle-loop-note reveal">— そして、また実践へ —</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6：電話鑑定実践
+       ============================================================ -->
+  <section class="section-phone" id="phone">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Phone Reading</span>
+          <h2 class="section-title">電話鑑定実践</h2>
+          <p class="section-lead">声だけで信頼を築く電話鑑定は、独特の技術が求められます。<br>al academyでは、次の7つの要素を実践形式で磨いていきます。</p>
+        </div>
+
+        <ul class="tag-grid">
+          <li class="tag-item reveal"><span class="ico">01</span><h4>第一声</h4></li>
+          <li class="tag-item reveal"><span class="ico">02</span><h4>声のトーン</h4></li>
+          <li class="tag-item reveal"><span class="ico">03</span><h4>話す速度</h4></li>
+          <li class="tag-item reveal"><span class="ico">04</span><h4>質問力</h4></li>
+          <li class="tag-item reveal"><span class="ico">05</span><h4>沈黙対応</h4></li>
+          <li class="tag-item reveal"><span class="ico">06</span><h4>時間配分</h4></li>
+          <li class="tag-item reveal"><span class="ico">07</span><h4>クロージング</h4></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7：チャット鑑定実践
+       ============================================================ -->
+  <section class="section-chat" id="chat">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Chat Reading</span>
+          <h2 class="section-title">チャット鑑定実践</h2>
+          <p class="section-lead">チャット鑑定は課金形態によって、求められるスキルが異なります。<br>それぞれに合わせた実践トレーニングを行います。</p>
+        </div>
+
+        <div class="compare-grid">
+          <div class="compare-card type-a reveal">
+            <h3>文字課金型</h3>
+            <p class="desc">文字数に応じて料金が発生するスタイル</p>
+            <ul>
+              <li>短い文章で的確に伝える力</li>
+              <li>要点を絞る文章構成力</li>
+              <li>読みやすさへの配慮（改行・言葉選び）</li>
+              <li>鑑定結果を端的に伝える力</li>
+            </ul>
+          </div>
+          <div class="compare-card type-b reveal">
+            <h3>時間課金型</h3>
+            <p class="desc">時間に応じて料金が発生するスタイル</p>
+            <ul>
+              <li>会話のテンポを保つ力</li>
+              <li>間（ま）の取り方</li>
+              <li>雑談から本題へ誘導する力</li>
+              <li>時間内に満足度を高める構成力</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8：模擬オーディション
+       ============================================================ -->
+  <section class="section-audition" id="audition">
+    <img src="assets/icons/star.svg" class="decor decor--star spin-slow" style="top:10%; left:6%;" alt="">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Mock Audition</span>
+          <h2 class="section-title">模擬オーディション</h2>
+          <p class="section-lead">本番のオーディションを想定し、9つの視点から評価を行います。</p>
+        </div>
+
+        <ul class="audition-grid">
+          <li class="audition-item reveal">第一印象</li>
+          <li class="audition-item reveal">プロフィール</li>
+          <li class="audition-item reveal">声</li>
+          <li class="audition-item reveal">話し方</li>
+          <li class="audition-item reveal">質問力</li>
+          <li class="audition-item reveal">鑑定スピード</li>
+          <li class="audition-item reveal">寄り添い方</li>
+          <li class="audition-item reveal">鑑定結果の伝え方</li>
+          <li class="audition-item reveal">プロ意識</li>
+        </ul>
+
+        <div class="audition-callout reveal">
+          <p>「なぜ評価されないのか」まで、具体的に。</p>
+          <p>評価の結果だけでなく、その理由と改善の方向性まで丁寧にお伝えします。次にどこを変えればよいかが見える状態を目指します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 9：プロフィール・ブランディング支援
+       ============================================================ -->
+  <section class="section-branding" id="branding">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Branding</span>
+          <h2 class="section-title">プロフィール・<br class="only-sp">ブランディング支援</h2>
+          <p class="section-lead">選ばれるかどうかは、鑑定の質だけでなく「見せ方」にも左右されます。</p>
+        </div>
+
+        <ul class="branding-grid">
+          <li class="branding-item reveal">占い師名</li>
+          <li class="branding-item reveal">写真</li>
+          <li class="branding-item reveal">キャッチコピー</li>
+          <li class="branding-item reveal">自己紹介文</li>
+          <li class="branding-item reveal">得意相談</li>
+          <li class="branding-item reveal">占術の見せ方</li>
+          <li class="branding-item reveal">SNS発信</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 10：デビュー後の支援
+       ============================================================ -->
+  <section class="section-after" id="after-debut">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">After Debut</span>
+          <h2 class="section-title">デビュー後の支援</h2>
+          <p class="section-lead">al academyの伴走は、デビューして終わりではありません。</p>
+        </div>
+
+        <ul class="after-grid">
+          <li class="after-item reveal"><span class="num">01</span><p>数値分析（アクセス・成約率などの振り返り）</p></li>
+          <li class="after-item reveal"><span class="num">02</span><p>接客改善</p></li>
+          <li class="after-item reveal"><span class="num">03</span><p>プロフィール改善</p></li>
+          <li class="after-item reveal"><span class="num">04</span><p>リピート対策</p></li>
+          <li class="after-item reveal"><span class="num">05</span><p>売上改善</p></li>
+          <li class="after-item reveal"><span class="num">06</span><p>グレードアップ支援</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 11：al academyの理念
+       ============================================================ -->
+  <section class="section-philosophy" id="philosophy">
+    <img src="assets/icons/moon.svg" class="decor decor--moon float-slow" style="top:6%; right:6%;" alt="">
+    <div class="container">
+      <div class="section-inner">
+        <span class="eyebrow">Philosophy</span>
+        <p class="philosophy-statement reveal">
+          相談者を<span class="accent">幸せ</span>にする。<br>
+          そしてプロとして<span class="accent">正当に稼ぐ</span>。
+        </p>
+
+        <div class="loop-diagram reveal">
+          <div class="loop-node">価値ある鑑定</div>
+          <span class="loop-arrow-down"></span>
+          <div class="loop-node">満足</div>
+          <span class="loop-arrow-down"></span>
+          <div class="loop-node">リピート</div>
+          <span class="loop-arrow-down"></span>
+          <div class="loop-node">収入の安定</div>
+        </div>
+        <p class="loop-cycle-note reveal">— そして、また価値ある鑑定へ —</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 12：こんな方におすすめ
+       ============================================================ -->
+  <section class="section-recommend" id="recommend">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">For You</span>
+          <h2 class="section-title">こんな方に<br class="only-sp">おすすめです</h2>
+        </div>
+
+        <ul class="check-list">
+          <li class="check-item reveal"><span class="check">✓</span><p>占術の知識はあるが、仕事にする自信がない方</p></li>
+          <li class="check-item reveal"><span class="check">✓</span><p>プロ占い師オーディションに不安がある方</p></li>
+          <li class="check-item reveal"><span class="check">✓</span><p>電話・チャット鑑定の実践経験を積みたい方</p></li>
+          <li class="check-item reveal"><span class="check">✓</span><p>プロフィールや発信に自信が持てない方</p></li>
+          <li class="check-item reveal"><span class="check">✓</span><p>リピーターを増やす方法を知りたい方</p></li>
+          <li class="check-item reveal"><span class="check">✓</span><p>占いを「続けていける仕事」に育てたい方</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 13：第1期5名限定募集
+       ============================================================ -->
+  <section class="section-recruit" id="recruit">
+    <div class="container">
+      <div class="section-inner">
+        <span class="eyebrow">First Season</span>
+        <h2 class="section-title reveal">第1期 募集について</h2>
+        <p class="recruit-number reveal">5<span>名限定</span></p>
+
+        <div class="recruit-reason reveal">
+          <p class="label">少人数制の理由</p>
+          <p class="reason-text">
+            「一人ひとりの鑑定を確認し、<br>細かくフィードバックするため」
+          </p>
+        </div>
+
+        <div class="hero-actions reveal" style="margin-top:40px;">
+          <a href="#cta" class="btn btn--primary">無料相談に申し込む</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 14：料金
+       ============================================================ -->
+  <section class="section-price" id="price">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Price</span>
+          <h2 class="section-title">料金</h2>
+          <p class="section-lead">月額サブスクリプション方式でご案内しています。</p>
+        </div>
+
+        <!-- 金額はプレースホルダーです。実際の金額に置き換えてください（下記1行を編集） -->
+        <div class="price-card reveal">
+          <p class="plan-name">MONTHLY PLAN</p>
+          <p class="plan-price">¥XX,XXX<sub> / 月（税込）</sub></p>
+          <p class="plan-note">※料金プランは無料相談にて詳しくご案内します</p>
+          <ul>
+            <li>実践型トレーニングへの参加</li>
+            <li>個別フィードバック</li>
+            <li>模擬オーディション</li>
+            <li>プロフィール・ブランディング添削</li>
+            <li>デビュー後の継続サポート</li>
+          </ul>
+          <a href="#cta" class="btn btn--primary">無料相談に申し込む</a>
+        </div>
+        <p class="price-disclaimer reveal">※コース内容・料金プランは、今後変更となる場合があります。最新情報は無料相談にてご案内いたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 15：申込みの流れ
+       ============================================================ -->
+  <section class="section-flow" id="flow">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Flow</span>
+          <h2 class="section-title">申込みの流れ</h2>
+        </div>
+
+        <div class="flow-list">
+          <div class="flow-step reveal">
+            <div class="step-left">
+              <span class="step-num">01</span>
+              <div class="connector"><span class="line"></span></div>
+            </div>
+            <div class="step-body"><h4>無料相談</h4><p>まずはお気軽に、現在の状況やお悩みをお聞かせください。</p></div>
+          </div>
+          <div class="flow-step reveal">
+            <div class="step-left">
+              <span class="step-num">02</span>
+              <div class="connector"><span class="line"></span></div>
+            </div>
+            <div class="step-body"><h4>ヒアリング</h4><p>目標や占術の学習状況を、丁寧にヒアリングします。</p></div>
+          </div>
+          <div class="flow-step reveal">
+            <div class="step-left">
+              <span class="step-num">03</span>
+              <div class="connector"><span class="line"></span></div>
+            </div>
+            <div class="step-body"><h4>プラン案内</h4><p>あなたに合ったプログラム内容・料金プランをご案内します。</p></div>
+          </div>
+          <div class="flow-step reveal">
+            <div class="step-left">
+              <span class="step-num">04</span>
+              <div class="connector"><span class="line"></span></div>
+            </div>
+            <div class="step-body"><h4>受講</h4><p>プログラムに沿って、実践力とプロとしての力を身につけます。</p></div>
+          </div>
+          <div class="flow-step reveal">
+            <div class="step-left">
+              <span class="step-num">05</span>
+              <div class="connector"><span class="line"></span></div>
+            </div>
+            <div class="step-body"><h4>実践</h4><p>実践→評価→フィードバックのサイクルで、力を磨いていきます。</p></div>
+          </div>
+          <div class="flow-step reveal">
+            <div class="step-left"><span class="step-num">06</span></div>
+            <div class="step-body"><h4>デビュー支援</h4><p>デビュー後も、数値分析や改善提案などで伴走を続けます。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 16：FAQ
+       ============================================================ -->
+  <section class="section-faq" id="faq">
+    <div class="container">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">よくあるご質問</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>占術の経験が浅くても参加できますか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. 一定の占術の学習経験がある方を対象としています。学習状況については、無料相談にてお気軽にご相談ください。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>オンラインで受講できますか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. はい。オンラインでの受講に対応しています。詳しい実施形式は無料相談にてご案内します。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>電話鑑定・チャット鑑定、どちらも学べますか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. はい。両方の実践トレーニングをご用意しています。ご自身の活動スタイルに合わせて取り組んでいただけます。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>副業として活動したい場合も対象ですか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. はい。専業・副業どちらの方にもご参加いただいています。ご自身のペースに合わせて進めていくことができます。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>オーディションには合格できますか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. オーディションの合否をお約束するものではありませんが、模擬オーディションを通じて評価されるポイントを具体的に確認し、改善を重ねていくことができます。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>お支払い方法を教えてください。</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. 月額サブスクリプション方式でのお支払いとなります。詳細は無料相談にてご案内いたします。</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span><span class="q-mark">Q.</span>途中で退会することはできますか？</span><span class="plus">+</span></summary>
+            <div class="faq-answer">A. はい、退会は可能です。手続き方法については、受講開始時にご案内いたします。</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 17：最終CTA
+       ============================================================ -->
+  <section class="section-final" id="cta">
+    <div class="ornate-frame" aria-hidden="true">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--tl" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--tr" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--bl" alt="">
+      <img src="assets/icons/frame-corner.svg" class="corner corner--br" alt="">
+    </div>
+    <img src="assets/icons/moon.svg" class="decor decor--moon float-slow" style="top:10%; left:8%;" alt="">
+    <img src="assets/icons/cloud.svg" class="decor decor--cloud" style="bottom:-4%; right:-8%;" alt="">
+    <img src="assets/icons/star.svg" class="decor decor--star spin-slow" style="bottom:14%; right:8%;" alt="">
+    <img src="assets/icons/star-small.svg" class="decor decor--star-sm float-slow" style="top:16%; right:24%;" alt="">
+    <div class="container">
+      <div class="section-inner">
+        <img src="assets/icons/logo-badge.svg" class="logo-badge--lg reveal" alt="al academy" style="margin-bottom:26px;">
+        <p class="final-lead reveal text-gradient">占術を学んだ、その先へ。</p>
+
+        <p class="final-chain reveal">
+          知識を、<span class="accent">実践</span>に。<br>
+          実践を、<span class="accent">仕事</span>に。<br>
+          鑑定を、<span class="accent">価値</span>に。<br>
+          価値を、<span class="accent">収入</span>に。
+        </p>
+
+        <div class="final-badge reveal">
+          <span class="badge"><span class="dot"></span>第1期 5名限定 募集</span>
+        </div>
+
+        <!-- TODO: 実際の申込みフォーム／LINE公式アカウント等のURLに置き換えてください -->
+        <div class="final-actions reveal">
+          <a href="#" class="btn btn--primary">
+            無料相談に申し込む
+            <small>所要時間の目安：約30分</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <p class="brand-name">al <em>academy</em></p>
+  <p class="footer-tagline">実践型プロ占い師育成プログラム</p>
+
+  <div class="footer-links">
+    <a href="#hero">トップへ戻る</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+  </div>
+
+  <p class="footer-copy">&copy; <span id="year">2026</span> al academy</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
